@@ -30,7 +30,7 @@ class TextToSpeech:
             self._client = ElevenLabs(api_key=settings.ELEVENLABS_API_KEY)
         return self._client
 
-    def synthesize(self, text: str) -> bytes:
+    async def synthesize(self, text: str) -> bytes:
         """Convert text to speech using ElevenLabs.
 
         Args:
