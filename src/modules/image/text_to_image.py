@@ -11,6 +11,10 @@ from langchain_groq import ChatGroq
 from pydantic import BaseModel, Field
 from together import Together
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 class ScenarioPrompt(BaseModel):
     """Class for the scenario response"""

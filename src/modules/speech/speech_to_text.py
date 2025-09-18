@@ -5,6 +5,9 @@ from typing import Optional
 from src.core.exceptions import SpeechToTextError
 from src.settings import settings
 from groq import Groq
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class SpeechToText:

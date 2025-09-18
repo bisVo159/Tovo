@@ -4,6 +4,9 @@ from src.core.exceptions import TextToSpeechError
 from src.settings import settings
 from elevenlabs import VoiceSettings
 from elevenlabs.client import ElevenLabs
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class TextToSpeech:

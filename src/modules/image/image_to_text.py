@@ -5,6 +5,9 @@ from typing import Optional, Union
 from src.core.exceptions import ImageToTextError
 from src.settings import settings
 from groq import Groq
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class ImageToText:
