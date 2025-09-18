@@ -12,6 +12,7 @@ __pycache__/
 venv/
 .env/
 .venv/
+.env
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -27,3 +28,6 @@ Thumbs.db
 .cache/
 .mypy_cache/
 .pytest_cache/
+
+# test
+test/
