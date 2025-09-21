@@ -100,7 +100,7 @@ async def audio_node(state: AgentState, config: RunnableConfig):
     )
     output_audio =await text_to_speech_module.synthesize(response)
 
-    return {"messages": response, "audio_buffer": output_audio}
+    return {"messages": AIMessage(content=response), "audio_buffer": output_audio}
 
 async def image_node(state: AgentState, config: RunnableConfig):
     current_activity = ScheduleContextGenerator.get_current_activity()
