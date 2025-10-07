@@ -1,93 +1,118 @@
-## Tovo – One Agent, All Conversations: A multimodal WhatsApp AI agent that processes text, speech, and images.
+# Tovo – One Agent, All Conversations
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue.svg) 
-![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-green) 
-![LangGraph](https://img.shields.io/badge/LangGraph-Powered-orange)  ![LangChain](https://img.shields.io/badge/LangChain-Integrated-green)  ![WhatsApp](https://img.shields.io/badge/Platform-WhatsApp-lightgrey)
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-green)
+![LangGraph](https://img.shields.io/badge/LangGraph-Powered-orange)
+![LangChain](https://img.shields.io/badge/LangChain-Integrated-green)
+![WhatsApp](https://img.shields.io/badge/Platform-WhatsApp-lightgrey)
 ![Qdrant](https://img.shields.io/badge/Qdrant-VectorDB-red)
 ![SQLite](https://img.shields.io/badge/SQLite-Database-lightblue)
 
-
-Tovo is a **multimodal WhatsApp AI Agent** that processes **text, speech, and images** in one unified experience.  
-It is designed to be **context-aware, memory-driven, and adaptive**, handling conversations just like a human would.  
+Tovo is a **multimodal WhatsApp AI Agent** that processes **text, speech, and images** in one unified experience. It is designed to be **context-aware, memory-driven, and adaptive**, handling conversations just like a human would.
 
 ---
 
-## 🌟 Features  
+## 🎬 Demo
 
-- 💬 **Text Conversations** – Engage in natural, human-like dialogue.  
-- 🎙 **Speech-to-Text (STT)** – Understands voice messages.  
-- 🔊 **Text-to-Speech (TTS)** – Responds with lifelike audio.  
-- 🖼️ **Image-to-Text (ITT)** – Interprets and explains images.  
-- 🖌️ **Text-to-Image (TTI)** – Generates creative images from text prompts. 
-- 🖼 **Image Understanding** – Analyzes and describes images with contextual meaning.  
-- 🧠 **Memory-Aware Agent**  
-  - **Qdrant Vector Store** → Long-term semantic recall.  
-  - **SQLite Short-Term Memory** → Recent conversational context.  
-  - **Conversation Summary** → Keeps a compact summary so full message history does not need to be loaded.
-- 🔄 **Adaptive Workflow** – Automatically routes input to text, audio, or image workflows.  
+Watch a quick demonstration of Tovo's user interface and capabilities.
+
+<video controls src="public/tovo_ui.mp4" title="Tovo UI Demo" width="600">
+    <a href="public/tovo_ui.mp4" title="Tovo UI Demo">
+        <img src="public/output.png" alt="Tovo Demo" width="600"/>
+    </a>
+</video>
+
+---
+
+## 🌟 Features
+
+-   💬 **Text Conversations**: Engage in natural, human-like dialogue.
+-   🎙️ **Speech-to-Text (STT)**: Understands and transcribes voice messages.
+-   🔊 **Text-to-Speech (TTS)**: Responds with lifelike audio for a more personal touch.
+-   🖼️ **Image-to-Text (ITT)**: Interprets and describes images sent by the user.
+-   🖌️ **Text-to-Image (TTI)**: Generates creative images from textual prompts.
+-   🧠 **Memory-Aware Agent**:
+    -   **Long-Term Memory**: Utilizes a Qdrant vector store for semantic recall of important facts.
+    -   **Short-Term Memory**: Employs SQLite to track recent conversational context for each session.
+    -   **Conversation Summarization**: Condenses long conversations to maintain context efficiently.
+-   🔄 **Adaptive Workflow**: Dynamically routes user input to the appropriate text, audio, or image generation workflow using LangGraph.
 
 ---
 
 ## 🛠️ Tech Stack
-- **Backend**: FastAPI  
-- **LLM Orchestration**: LangChain , LangGraph  
-- **Memory**: Qdrant (long-term), SQLite (short-term)  
-- **Models**: LLM, TTS, ITT ( Groq ) , ElevenLabs TTS, Together Ai TTI
+
+| Category            | Technology                                                              |
+| ------------------- | ----------------------------------------------------------------------- |
+| **Backend**         | FastAPI                                                                 |
+| **Orchestration**   | LangChain, LangGraph                                                    |
+| **Memory**          | Qdrant (Long-Term), SQLite (Short-Term)                                 |
+| **Models**          | Groq (LLM, STT, ITT), ElevenLabs (TTS), Together AI (TTI)                |
+| **Interface**       | WhatsApp Cloud API, Chainlit                                                   |
 
 ---
 
-## 🏗️ Architecture  
+## 🏗️ Architecture
 
-Tovo is built with a modular, graph-based workflow:  
+Tovo is built with a modular, graph-based architecture orchestrated by **LangGraph**.
 
-- **LangGraph** → State management, branching, and workflow orchestration.  
-- **LangChain** → LLM reasoning, context injection, and memory management.  
-- **Qdrant Vector Store** → Stores embeddings for semantic memory.  
-- **SQLite (AsyncSqliteSaver)** → Tracks session-specific short-term memory.  
-- **WhatsApp Cloud API** → Interface for receiving and sending multimodal messages.  
-- **STT/TTS Models** → Converts between speech and text.  
-- **ITT/TTI Models** → Converts between Image and text. 
+-   **LangGraph**: Manages the agent's state, branching logic, and the overall flow of conversation.
+-   **LangChain**: Powers the core reasoning, prompt management, and integration with various services.
+-   **Memory System**: A dual-memory approach with **Qdrant** for long-term semantic storage and **SQLite** for short-term session memory ensures contextually rich interactions.
+-   **Multimodal Modules**: Dedicated modules for Speech-to-Text, Text-to-Speech, Image-to-Text, and Text-to-Image handle the processing of different data types.
+-   **WhatsApp API Interface**: Serves as the entry and exit point for all user communications, handling incoming messages and sending back responses in the correct format (text, audio, or image).
 
 ---
 
-## 📊 Workflow Diagram  
+## 📊 Workflow Diagram
 
-Here’s the workflow representation of **Tovo Agent**:  
+The diagram below illustrates the agent's decision-making and processing flow.
 
-![Workflow](test/output.png)   
+![Workflow](public/output.png)
 
 ---
 
-### 1️⃣ Clone the Repository  
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/bisVo159/Tovo.git
 cd Tovo
 ```
 
-### 2️⃣ Install Dependencies
-```
+### 2. Install Dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Setup Environment Variables
-```
-Create a .env file and configure:
+### 3. Set Up Environment Variables
 
+Create a `.env` file in the root directory and add the following keys:
+
+```env
+# WhatsApp Cloud API
 WHATSAPP_TOKEN=your_whatsapp_token
 WHATSAPP_PHONE_NUMBER_ID=your_phone_number_id
 WHATSAPP_VERIFY_TOKEN=your_webhook_verify_token
 
+# Service APIs
 ELEVENLABS_API_KEY=your_elevenlabs_api_key
 ELEVENLABS_VOICE_ID=your_voice_id
 TOGETHER_API_KEY=your_together_api_key
-
 GROQ_API_KEY=your_groq_api_key
+
+# Qdrant Vector Database
+QDRANT_URL=your_qdrant_cluster_url
 QDRANT_API_KEY=your_qdrant_api_key
 ```
 
-### 4️⃣ Run the Agent
-```
-uvicorn src\interfaces\whatsapp\webhook_endpoint:app --reload
+### 4. Run the Agent
+
+Use Uvicorn to run the FastAPI application:
+
+```bash
+uvicorn src.interfaces.whatsapp.webhook_endpoint:app --reload
 ```
 
 ---
