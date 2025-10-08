@@ -16,11 +16,11 @@ Tovo is a **multimodal WhatsApp AI Agent** that processes **text, speech, and im
 
 Watch a quick demonstration of Tovo's user interface and capabilities.
 
-<video controls src="public/tovo_ui.mp4" title="Tovo UI Demo" width="600">
-    <a href="public/tovo_ui.mp4" title="Tovo UI Demo">
-        <img src="public/output.png" alt="Tovo Demo" width="600"/>
-    </a>
-</video>
+<a href="https://res.cloudinary.com/dnlldlioj/video/upload/v1759904946/demo%20videos/tovo_ui_yadsgh.mp4" title="Tovo UI Demo">
+    <img src="public/thumbnail.png" alt="Tovo Demo" width="600"/>
+</a>
+
+*(Click the image to play the video)*
 
 ---
 
