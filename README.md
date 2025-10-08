@@ -113,6 +113,9 @@ Use Uvicorn to run the FastAPI application:
 
 ```bash
 uvicorn src.interfaces.whatsapp.webhook_endpoint:app --reload
+or
+cd src/interfaces/chainlit
+chainlit run app.py -w  
 ```
 
 ---
